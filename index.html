@@ -62,8 +62,8 @@
           <div id="unity-progress-bar-full"></div>
         </div>
         <div id="message">
-          Wegen der vielen benötigten Audio-Dateien kann das Laden sehr lange dauern (bis zu 2 Minuten).<br>
-          Du musst somit leider etwas Geduld mitbringen.
+          WEGEN DER VIELEN BENÖTIGTEN AUDIO-DATEIEN KANN DAS LADEN ETWAS LÄNGER DAUERN (BIS ZU 30 SEKUNDEN).
+          DU MUSST SOMIT LEIDER EINMALIG ETWAS GEDULD MITBRINGEN.
         </div>
         <!-- <div id="loading-percentage">0%</div> -->
         <div class="spinner"></div>
@@ -158,6 +158,34 @@
         });
       };
       document.body.appendChild(script);
+
+      // Function to enter fullscreen
+      function RequestFullscreen() {
+        var element = document.documentElement; // Get the whole document
+        if (element.requestFullscreen) {
+          element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) { // Firefox
+          element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullscreen) { // Chrome, Safari, Opera
+          element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) { // IE/Edge
+          element.msRequestFullscreen();
+        }
+      }
+
+      // Function to exit fullscreen
+      function ExitFullscreen() {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Firefox
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Chrome, Safari, Opera
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+          document.msExitFullscreen();
+        }
+        }
+
     </script>
   </body>
 </html>
